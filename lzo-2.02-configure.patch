@@ -1,0 +1,35 @@
+diff -up lzo-2.02/configure.configure lzo-2.02/configure
+--- lzo-2.02/configure.configure	2005-10-17 18:10:50.000000000 +0200
++++ lzo-2.02/configure	2008-04-02 12:51:50.000000000 +0200
+@@ -5096,8 +5096,8 @@ main ()
+   for (i = 0; i < 256; i++)
+     if (XOR (islower (i), ISLOWER (i))
+ 	|| toupper (i) != TOUPPER (i))
+-      exit(2);
+-  exit (0);
++      return (2);
++  return (0);
+ }
+ _ACEOF
+ rm -f conftest$ac_exeext
+@@ -19994,7 +19994,7 @@ asm_dir=
+ asm_msg_amd64=no
+ asm_msg_i386=no
+ 
+-case $host_cpu in
++case $target_cpu in
+     amd64 | x86_64) asm_arch="amd64"; asm_dir="asm/amd64/src_gas/elf64" ;;
+     i?86) asm_arch="i386"; asm_dir="asm/i386/src_gas" ;;
+     *) enable_asm=no ;;
+diff -up lzo-2.02/configure.ac.configure lzo-2.02/configure.ac
+--- lzo-2.02/configure.ac.configure	2005-10-17 18:10:50.000000000 +0200
++++ lzo-2.02/configure.ac	2008-04-02 11:53:37.000000000 +0200
+@@ -79,7 +79,7 @@ asm_dir=
+ asm_msg_amd64=no
+ asm_msg_i386=no
+ 
+-case $host_cpu in
++case $target_cpu in
+     amd64 | x86_64) asm_arch="amd64"; asm_dir="asm/amd64/src_gas/elf64" ;;
+     i?86) asm_arch="i386"; asm_dir="asm/i386/src_gas" ;;
+     *) enable_asm=no ;;
